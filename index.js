@@ -1,5 +1,6 @@
 const { addonBuilder, serveHTTP } = require("stremio-addon-sdk");
 const axios = require("axios");
+const { mapSubtitles } = require("./modules/mapSubtitles.js");
 
 // Stremio manifest
 const manifest = {
@@ -25,8 +26,12 @@ builder.defineSubtitlesHandler(async ({ type, id }) => {
     );
     const subtitlesData = response.data;
 
+    const subtitles = mapSubtitles(subtitlesData[id] || []);
+
+    console.log("Subtitles found:", subtitles);
+
     // Return subtitles if available for the given ID
-    return { subtitles: subtitlesData[id] || [] };
+    return { subtitles };
   } catch (error) {
     console.error("Error fetching subtitles:", error);
     return { subtitles: [] };
