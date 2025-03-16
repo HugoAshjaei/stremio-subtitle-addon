@@ -20,7 +20,8 @@ builder.defineSubtitlesHandler(async ({ type, id }) => {
   try {
     // Load subtitles JSON from GitHub
     const response = await axios.get(
-      "https://raw.githubusercontent.com/hugoashjaei/stremio-subtitle-addon/main/subtitles.json"
+      "https://raw.githubusercontent.com/hugoashjaei/stremio-subtitle-addon/main/subtitles.json?" +
+        new Date().getTime()
     );
     const subtitlesData = response.data;
 
