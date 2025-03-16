@@ -35,4 +35,6 @@ builder.defineSubtitlesHandler(async ({ type, id }) => {
   }
 });
 
-serveHTTP(builder.getInterface(), { port: 7000 });
+const PORT = process.env.PORT || 8080;
+
+serveHTTP(builder.getInterface(), { port: 8080 });
