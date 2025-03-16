@@ -1,0 +1,23 @@
+{
+  "name": "stremio-subtitle-addon",
+  "version": "1.0.0",
+  "description": "Share the subtitle URL here to add subtitles to Stremio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HugoAshjaei/stremio-subtitle-addon.git"
+  },
+  "author": "Hugo Ashjaei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HugoAshjaei/stremio-subtitle-addon/issues"
+  },
+  "homepage": "https://github.com/HugoAshjaei/stremio-subtitle-addon#readme",
+  "dependencies": {
+    "axios": "^1.8.3",
+    "stremio-addon-sdk": "^1.6.10"
+  }
+}
