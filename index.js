@@ -17,7 +17,6 @@ const manifest = {
 const builder = new addonBuilder(manifest);
 
 builder.defineSubtitlesHandler(async ({ type, id }) => {
-  console.log("Subtitles requested for", type, id);
   try {
     // Load subtitles JSON from GitHub
     const response = await axios.get(
@@ -27,8 +26,6 @@ builder.defineSubtitlesHandler(async ({ type, id }) => {
     const subtitlesData = response.data;
 
     const subtitles = mapSubtitles(subtitlesData[id] || []);
-
-    console.log("Subtitles found:", subtitles);
 
     // Return subtitles if available for the given ID
     return { subtitles };
